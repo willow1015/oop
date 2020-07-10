@@ -1,0 +1,30 @@
+package oop;
+
+import java.awt.Graphics;
+
+public class Circle extends Shape implements Renderable, Clickable {
+
+    private int radius;
+
+    public Circle(Vector2d position, int radius){
+        this.position = position;
+        this.radius = radius;
+    }
+
+    public void setRadius(int radius) {
+        this.radius = radius;
+    }
+
+	@Override
+	public void Render(final Graphics g, final float dt) {
+        
+		g.fillOval((int)position.x, (int)position.y, radius*2, radius*2);
+		
+	}
+
+    @Override
+    public boolean checkClicked(Vector2d point) {
+       return position.distance(point) < radius ? true : false;
+    }
+    
+}
