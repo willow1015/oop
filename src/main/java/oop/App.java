@@ -40,6 +40,14 @@ public class App
         /*Shape a = new Circle(new Vector2d(50, 50), 50);
         ((Circle)a).setRadius(1); //형변환*/
 
+        ComponentBase c = new ComponentBase();
+        try{
+            c.getComponent("key");
+        } catch (Exception e){
+            //
+        }
+        
+
     }
 
 
