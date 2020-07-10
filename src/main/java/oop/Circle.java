@@ -15,10 +15,14 @@ public class Circle extends Shape implements Renderable, Clickable {
         this.radius = radius;
     }
 
+    public int getRadius() {
+        return radius;
+    }
+
 	@Override
 	public void Render(final Graphics g, final float dt) {
         
-		g.fillOval((int)position.x, (int)position.y, radius*2, radius*2);
+		g.fillOval((int)position.x - radius, (int)position.y - radius, radius*2, radius*2);
 		
 	}
 

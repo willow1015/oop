@@ -9,6 +9,12 @@ public class Shape {
 
     ArrayList<OnClickListener> listeners = new ArrayList<OnClickListener>();
 
+    public void onClick(Vector2d point) {
+        for (OnClickListener onClickListener : listeners) {
+            onClickListener.Onclick(point);
+        } //브로드캐스팅해주는거
+    }
+
     public void setPosition(Vector2d position) {
         this.position = position;
     }

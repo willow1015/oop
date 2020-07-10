@@ -13,7 +13,14 @@ public class App
             .setSize(new Vector2d(50, 50))
             .build();
 
-        Circle circle1 = new Circle(new Vector2d(50, 50), 50);
+        final Circle circle1 = new Circle(new Vector2d(100, 100), 25);
+        circle1.addOnClickListener(new OnClickListener(){
+        
+            @Override
+            public void Onclick(Vector2d position) {
+                circle1.setRadius(circle1.getRadius() + 10);                
+            }
+        });
 
         renderer.addRenderable(rect1);
         renderer.addRenderable(rect2);

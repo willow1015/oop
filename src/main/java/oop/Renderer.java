@@ -34,12 +34,17 @@ public class Renderer {
 
             @Override
             public void mouseClicked(MouseEvent e) {
+                Vector2d coord = new Vector2d(e.getX(), e.getY());
+
                 for (Renderable renderable : drawingList) {
                     if (renderable instanceof Clickable) {
                         Clickable obj = (Clickable) renderable;
 
                         if (obj.checkClicked(new Vector2d(e.getX(), e.getY()))) {
-                            // if()
+                            Shape shape = (Shape) obj;
+                            Vector2d rel = new Vector2d(shape.position);
+                            rel.subtract(coord);
+                            shape.onClick(rel);
                         }
                     }
                 }

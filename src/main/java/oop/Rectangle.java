@@ -49,12 +49,14 @@ public class Rectangle extends Shape implements Renderable, Clickable {
 
     @Override
     public boolean checkClicked(Vector2d point) {
-        if (position.x <= point.x && position.x + size.x <= point.x) {
-            if (position.y <= point.y && position.y + size.y <= point.y) {
+        if (position.x <= point.x && point.x <= position.x + size.x) {
+            if (position.y <= point.y && point.y <= position.y + size.y) {
                 return true;
             }
         }
 
         return false;
     }
+
+  
 }
